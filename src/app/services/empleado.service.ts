@@ -45,6 +45,14 @@ export class EmpleadoService {
       telefono: "+58 424 5841235",
       fechaingreso: new Date('2022-08-25'),
       sexo: 'Femenino'
+    },
+    {
+      nombre: "Carlos",
+      correo: 'carlos@gmail.com',
+      estadoCivil: "Casado (Lo siento Carlos)",
+      telefono: "+58 424 5217564",
+      fechaingreso: new Date('2022-09-17'),
+      sexo: 'Femenino'
     }
   ];
 
