@@ -23,8 +23,6 @@ export class ListEmpleadoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmpleados();
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -36,11 +34,13 @@ export class ListEmpleadoComponent implements OnInit {
     this.listEmpleados = this.empleadoService.getEmpleados();
     console.log(this.listEmpleados);
     this.dataSource = new MatTableDataSource<Empleado>(this.listEmpleados);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   eliminarEmpleado(i: number) {
     this.empleadoService.eliminarEmpleado(i);
-    this.getEmpleados()
+    this.getEmpleados();
   }
 
 }
