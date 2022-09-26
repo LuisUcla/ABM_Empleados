@@ -6,7 +6,8 @@ import { MatTableModule } from '@angular/material/table';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MensajeConfirmacionComponent } from './share/mensaje-confirmacion/mensaje-confirmacion.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button'; 
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [ 
     NavbarComponent,
@@ -24,10 +25,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatSliderModule,
     MatToolbarModule,
     MatTableModule,
+    MatDialogModule,
+    MatButtonModule,
+    
     NavbarComponent,
     MensajeConfirmacionComponent,
-    MatDialogModule,
-    MatButtonModule
   ]
 })
 export class AngularMaterialModule { }

@@ -4,6 +4,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 import { Empleado } from 'src/app/models/empleado';
+import { MatDialog } from '@angular/material/dialog';
+import { MensajeConfirmacionComponent } from 'src/app/components/share/mensaje-confirmacion/mensaje-confirmacion.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -19,7 +22,10 @@ export class ListEmpleadoComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: any; // para ordenar haciendo click en cada columna
   @ViewChild(MatPaginator, { static: true }) paginator: any; // para hacer la paginacion que esta ubicada a la derecha parte baja
 
-  constructor(private empleadoService: EmpleadoService) { }
+  constructor(private empleadoService: EmpleadoService,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
+    ) { }
 
   ngOnInit(): void {
     this.getEmpleados();
@@ -39,8 +45,23 @@ export class ListEmpleadoComponent implements OnInit {
   }
 
   eliminarEmpleado(i: number) {
-    this.empleadoService.eliminarEmpleado(i);
-    this.getEmpleados();
+    // lanza el popover
+    const dialogRef = this.dialog.open(MensajeConfirmacionComponent, {
+      width: '350px',
+      data: { mensaje: 'Esta seguro que desea eliminar el empleado?' }
+    });
+
+    // recibe el evento o los datos que vienen del popover o componente hijo
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+      if (result == 'aceptar') {
+        this.empleadoService.eliminarEmpleado(i); // elimina el emplado de la lista
+        this.getEmpleados(); // hace una recarga de la lista de empleados
+        this.snackBar.open(
+          'El empleado fue eliminado con exito', '', { duration: 30000 }
+        )
+      } 
+    });
   }
 
 }

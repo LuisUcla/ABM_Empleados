@@ -12,9 +12,6 @@ import { ComponentsRoutesModule } from './pages/components-routes.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     AngularMaterialModule, // <----- componentes de angular material
     ComponentsRoutesModule // <----- vistas o modulos principales
   ],

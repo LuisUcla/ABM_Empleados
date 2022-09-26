@@ -1,4 +1,12 @@
 <div style="margin: 10px;">
+  <div class="row">
+    <div class="col-lg-6">
+      <h2>Listado de empleados</h2>
+    </div>
+    <div class="col-lg-6" style="text-align: right;">
+      <button mat-raised-button color="warn" routerLink="/add">Agregar</button>
+    </div>
+  </div>
   <mat-form-field>
     <mat-label>Filtro</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Filtro...">
