@@ -6,3 +6,13 @@ mat-form-field {
     width: 100%;
     font-size: 16px;
 }
+
+.btn-danger {
+    background-color: #f44336;
+    border-color: #f44336;
+    margin-left: 10px;
+}
+
+.alingEnd {
+    text-align: end;
+}

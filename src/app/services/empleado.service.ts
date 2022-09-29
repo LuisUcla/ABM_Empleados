@@ -11,7 +11,7 @@ export class EmpleadoService {
       correo: 'luis@gmail.com',
       estadoCivil: "Soltero",
       telefono: "+58 412 5615779",
-      fechaingreso: new Date('2022-01-25'),
+      fechaIngreso: new Date('2022-01-25'),
       sexo: 'Masculino'
     },
     {
@@ -19,7 +19,7 @@ export class EmpleadoService {
       correo: 'maria@gmail.com',
       estadoCivil: "Soltero",
       telefono: "+58 412 4548666",
-      fechaingreso: new Date('2022-01-26'),
+      fechaIngreso: new Date('2022-01-26'),
       sexo: 'Femenino'
     },
     {
@@ -27,7 +27,7 @@ export class EmpleadoService {
       correo: 'juan@gmail.com',
       estadoCivil: "Casado",
       telefono: "+58 416 5894215",
-      fechaingreso: new Date('2022-02-04'),
+      fechaIngreso: new Date('2022-02-04'),
       sexo: 'Masculino'
     },
     {
@@ -35,7 +35,7 @@ export class EmpleadoService {
       correo: 'adriana@gmail.com',
       estadoCivil: "Soltero",
       telefono: "+58 412 8544123",
-      fechaingreso: new Date('2022-03-23'),
+      fechaIngreso: new Date('2022-03-23'),
       sexo: 'Femenino'
     },
     {
@@ -43,7 +43,7 @@ export class EmpleadoService {
       correo: 'emilia@gmail.com',
       estadoCivil: "Soltero",
       telefono: "+58 424 5841235",
-      fechaingreso: new Date('2022-08-25'),
+      fechaIngreso: new Date('2022-08-25'),
       sexo: 'Femenino'
     },
     {
@@ -51,7 +51,7 @@ export class EmpleadoService {
       correo: 'carlos@gmail.com',
       estadoCivil: "Casado (Lo siento Carlos)",
       telefono: "+58 424 5217564",
-      fechaingreso: new Date('2022-09-17'),
+      fechaIngreso: new Date('2022-09-17'),
       sexo: 'Femenino'
     }
   ];
@@ -65,5 +65,9 @@ export class EmpleadoService {
 
   eliminarEmpleado(i: number) {
     this.listEmpleados.splice(i, 1);
+  }
+
+  agregarEmpleado(empleado: Empleado) {
+    this.listEmpleados.unshift(empleado);
   }
 }

@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./list-empleado.component.css']
 })
 export class ListEmpleadoComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'correo', 'estadoCivil', 'fechaingreso', 'sexo', 'telefono', 'Acciones'];
+  displayedColumns: string[] = ['nombre', 'correo', 'estadoCivil', 'fechaIngreso', 'sexo', 'telefono', 'Acciones'];
   dataSource: any;
   listEmpleados: Empleado[] = [];
  

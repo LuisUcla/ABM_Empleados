@@ -2,7 +2,7 @@ export class Empleado {
     nombre = '';
     telefono = '';
     correo = '';
-    fechaingreso = new Date;
+    fechaIngreso = new Date;
     estadoCivil = '';
     sexo = ''
 }
