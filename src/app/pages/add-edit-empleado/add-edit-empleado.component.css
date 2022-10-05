@@ -16,3 +16,7 @@ mat-form-field {
 .alingEnd {
     text-align: end;
 }
+
+.msg-alert {
+    color: #f44336;
+}

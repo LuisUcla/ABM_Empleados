@@ -7,6 +7,7 @@ import { Empleado } from 'src/app/models/empleado';
 import { MatDialog } from '@angular/material/dialog';
 import { MensajeConfirmacionComponent } from 'src/app/components/share/mensaje-confirmacion/mensaje-confirmacion.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class ListEmpleadoComponent implements OnInit {
 
   constructor(private empleadoService: EmpleadoService,
     public dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -62,6 +64,10 @@ export class ListEmpleadoComponent implements OnInit {
         )
       } 
     });
+  }
+
+  editarEmpleado(i: number) {
+    this.router.navigate(['/edit', i] )
   }
 
 }
